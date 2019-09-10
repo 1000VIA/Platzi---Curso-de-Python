@@ -1,4 +1,4 @@
-#intalar sudo pacman -S tk   
+#intalar sudo pacman -S tk
 import turtle
 
 window = turtle.Screen() # Decirle a turtle que queremos generar una ventana
