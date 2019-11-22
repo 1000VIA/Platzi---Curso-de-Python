@@ -1,21 +1,27 @@
 # -*- coding: utf-8 -*-
-if is_genero(genero):
-    if edad > 18 and genero == 'Masculino':
+def is_genero(genero, edad):
+    if edad >= 18 and genero == 'M':
+        return 'M'
+    if edad >= 18 and genero == 'F':
+        return 'F'
+    if edad < 18 and genero == 'M':
+        return 'Niño'
+    if edad < 18 and genero == 'F':
+        return 'Niña'
 
 
 def run():
-    genero = int(input('¿Cuál es su género?: '))
+    genero = str(input('¿Cuál es su género?: '))
     edad = int(input('¿Ingrese su edad: '))
-    result = is_genero(genero)
+    result = is_genero(genero, edad)
 
-    if result is True:
+    if result == 'M':
         print('Hola, señor')
-    else:
+    elif result == 'Niño':
         print('Hola niño')
-    else:
-        if edad > 18:
-            print('Hola, señora')
-        else
+    if result == 'F':
+        print('Hola, señora')
+    elif result == 'Niña':
         print('Hola, niña')
 
 
