@@ -1,5 +1,5 @@
 #intalar sudo pacman -S tk   
-import turtle
+from turtle import *
 
 window = turtle.Screen() # Decirle a turtle que queremos generar una ventana
 milvia = turtle.Turtle() # Genero una tortuga que se va a llamar 'Milvia'
@@ -12,4 +12,4 @@ milvia.left(90)
 milvia.forward(100)
 milvia.left(90)
 
-turtle.mainloop(); #mainloop -> es para que turtle no cierre la ventana
+turtle.mainloop() #mainloop -> es para que turtle no cierre la ventana
