@@ -1,4 +1,3 @@
-
 def  foreign_exchange_calculator(ammount):
     mex_to_col_rate = 172
 
