@@ -26,7 +26,7 @@ def run():
     print('La suma y el promedio de las calificaciones:')
     for calificacion in calificaciones.values():
         suma_de_calificaciones += calificacion
-    promedio = suma_de_calificaciones/len(calificaciones)
+        promedio = suma_de_calificaciones/len(calificaciones)
     print('')
     print('La sumas es: {}'.format(suma_de_calificaciones))
     print('')
