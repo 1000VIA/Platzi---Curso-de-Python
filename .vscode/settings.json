@@ -1,5 +1,6 @@
 {
     "python.linting.pylintEnabled": true,
     "python.linting.flake8Enabled": false,
-    "python.linting.enabled": false
+    "python.linting.enabled": false,
+    "python.pythonPath": "c:\\Users\\Milvia\\Desktop\\Code your Future-HTML\\CYFCO\\Platzi---Curso-de-Python\\venv\\Scripts\\python.exe"
 }
