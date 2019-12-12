@@ -1,2 +1,2 @@
-requests==2.13.0 # Hacer solicitudes a internet y poder traer rl conteniado html de diferentes sitios web
+requests==2.20.0 # Hacer solicitudes a internet y poder traer rl conteniado html de diferentes sitios web
 beautifulsoup4==4.5.3 #parsear texto
