@@ -60,7 +60,7 @@ def run():
     contact_book = ContactBook()
 
     while True:
-        command = str(input('''
+        command = str(raw_input('''
             Â¿QuÃ© deseas hacer?
 
             [a]Ã±adir contacto
@@ -72,8 +72,8 @@ def run():
         '''))
 
         if command == 'a':
-            name = str(input('Escribe el nombre del contacto: '))
-            phone = str(input('Escribe el tel del contacto: '))
+            name = str(raw_input('Escribe el nombre del contacto: '))
+            phone = str(raw_input('Escribe el tel del contacto: '))
             email = str(input('Escribe el email del contacto: '))
 
             contact_book.add(name, phone, email)
