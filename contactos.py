@@ -33,16 +33,6 @@ class ContactBook:
         else:
             self._not_found()
     
-    def update(self, name, phone, email):
-        for contact in self._contacts:
-            if contact.name.lower() == name.lower():
-                contact.phone = phone
-                contact.email = email
-                break
-        else:
-            self._not_found()
-
-    
     def find(self, name):
         for idx, contact in enumerate(self._contacts):
             if contact.name.lower() == name.lower():
