@@ -1,3 +1,5 @@
+import csv
+
 class Contact: #Contenedor de variables
 
     def __init__(self, name, phone, email):
@@ -14,6 +16,7 @@ class ContactBook:
     def add(self, name, phone, email):
         contact = Contact(name, phone, email)
         self._contacts.append(contact)#Guardar contacto dentro de nuestra lista de contactos
+        self._save()
         #print('name: {}, phone: {}, email: {}'.format(name, phone, email))
 
     def show_all(self):
@@ -24,7 +27,9 @@ class ContactBook:
         for idx, contact in enumerate(self._contacts):
             if contact.name.lower() == name.lower():
                 del self._contacts[idx]
+                self._save()
                 break
+
     def search(self, name):
         for contact in self._contacts:
             if contact.name.lower() == name.lower():
@@ -32,16 +37,6 @@ class ContactBook:
                 break
         else:
             self._not_found()
-    
-    def update(self, name, phone, email):
-        for contact in self._contacts:
-            if contact.name.lower() == name.lower():
-                contact.phone = phone
-                contact.email = email
-                break
-        else:
-            self._not_found()
-
     
     def find(self, name):
         for idx, contact in enumerate(self._contacts):
@@ -53,8 +48,18 @@ class ContactBook:
     def update(self, idx, name, phone, email):
         newContact = Contact(name, phone, email)
         self._contacts[idx] = newContact
+        self._save()
         print('Contacto actualizado')
         print('*---*---*---*---*---*---*---*---*')
+
+#Metódo para guardar los contactos en el disco local.
+    def _save(self):
+        with open('contacts.csv', 'w') as f:
+            writer = csv.writer(f)
+            writer.writerow( ('name', 'phone', 'email') )
+
+            for contact in self._contacts:
+                writer.writerow( (contact.name, contact.phone, contact.email) )
 
     def _print_contact(self, contact): #los metodos de instancia siempre empiesan con self
         print('*---*---*---*---*---*---*---*---*')
@@ -72,6 +77,17 @@ class ContactBook:
 def run():
 
     contact_book = ContactBook()
+
+    with open('contacts.csv', 'r') as f:
+        reader = csv.reader(f)
+        for idx, row in enumerate(reader):
+            if len(row) == 0:
+                continue
+            if idx == 0:
+                continue
+
+            contact_book.add(row[0], row[1], row[2])
+            
 
     while True:
         command = str(input('''
